@@ -1,7 +1,4 @@
 import sqlite3
-import os
-
-
 # Conexão com o banco de dados
 conexao = sqlite3.connect('estoque.db')
 cursor = conexao.cursor()
@@ -15,8 +12,6 @@ cursor.execute('''CREATE TABLE IF NOT EXISTS estoque (
                     quantidade INTEGER
                 )''')
 conexao.commit()
-
-
 # Função para adicionar um produto ao estoque
 def adicionar_produto():
     nome = input("Digite o nome do produto: ")
