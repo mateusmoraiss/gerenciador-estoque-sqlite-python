@@ -7,30 +7,30 @@ def exibir_dados():
     conn = sqlite3.connect('estoque.db')
     cursor = conn.cursor()
 
-    # Executar a consulta para obter os dados do estoque
+    # CONSULTA
     cursor.execute('SELECT id, nome, descricao, preco, quantidade FROM estoque')
     dados = cursor.fetchall()
 
-    # Criar uma janela do tkinter
+    # CRIAÇÃO DE JANELA
     janela = Tk()
     janela.title('Visualização de Estoque')
 
-    # Criar o Treeview para exibir os dados
+    # EXIBIR OS DADOS NO TREEVIEW
     treeview = Treeview(janela, columns=('ID', 'Nome', 'Descrição', 'Preço', 'Quantidade'), show='headings')
     treeview.pack()
 
-    # Definir os cabeçalhos das colunas
+## NOME DAS COLUNAS NA TABELA
     treeview.heading('ID', text='ID')
     treeview.heading('Nome', text='Nome')
     treeview.heading('Descrição', text='Descrição')
     treeview.heading('Preço', text='Preço')
     treeview.heading('Quantidade', text='Quantidade')
 
-    # Adicionar os dados do estoque no Treeview
+    #####COLOCAR DADOS  no Treeview
     for dado in dados:
         treeview.insert('', 'end', values=dado)
 
-    # Executar a janela do tkinter
+    # EXIBIR A TABELA
     janela.mainloop()
 
 exibir_dados()

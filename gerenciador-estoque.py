@@ -1,9 +1,9 @@
 import sqlite3
-# Conexão com o banco de dados
+#### inicia conexão com o banco de dados
 conexao = sqlite3.connect('estoque.db')
 cursor = conexao.cursor()
-
-# Criar tabela do estoque
+                                            #tabela chamada estoque
+#### Criar tabela do estoque   SE NÃO EXSITIR ESTOQUE
 cursor.execute('''CREATE TABLE IF NOT EXISTS estoque (
                     id INTEGER PRIMARY KEY AUTOINCREMENT,
                     nome TEXT,
@@ -13,21 +13,21 @@ cursor.execute('''CREATE TABLE IF NOT EXISTS estoque (
                 )''')
 conexao.commit()
 
-# Função para adicionar um produto ao estoque
+##### Função para adicionar um produto
 def adicionar_produto():
     nome = input("Digite o nome do produto: ")
     descricao = input("Digite a descrição do produto: ")
     preco = float(input("Digite o preço do produto: "))
     quantidade = int(input("Digite a quantidade em estoque: "))
 
-    # Inserir produto no banco de dados
+   ##### Inserir um produto no dba
     cursor.execute("INSERT INTO estoque (nome, descricao, preco, quantidade) VALUES (?, ?, ?, ?)",
                    (nome, descricao, preco, quantidade))
     conexao.commit()
     print("Produto adicionado ao estoque com sucesso!")
 
 
-# Função para atualizar as informações de um produto no estoque
+#### Função que atualiza as informações
 def atualizar_produto():
     produto_id = int(input("Digite o ID do produto que deseja atualizar: "))
 
@@ -79,11 +79,11 @@ def atualizar_produto():
     else:
         print("Nenhum produto encontrado com o ID especificado.")
 
-# Função para gerar o relatório de estoque
+### Função que gera o relatório
 def gerar_relatorio():
     print("Relatório de Estoque:")
 
-    # Selecionar todos os produtos do banco de dados
+    ##### Selecionar todos os produtos
     cursor.execute("SELECT * FROM estoque")
     produtos = cursor.fetchall()
 
@@ -96,7 +96,7 @@ def gerar_relatorio():
         print("----------------------")
 
 
-# Função para fechar a conexão com o banco de dados
+##### Função para fechar a conexão com o banco de dados
 def fechar_programa():
     conexao.close()
     print("Programa encerrado. Banco de dados salvo.")
