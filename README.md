@@ -4,7 +4,7 @@ O projeto consiste em uma biblioteca para visualização e gerenciamento de esto
 
 <p>
 
-A pasta "arquivos-adicionais" contém recursos adicionais para facilitar o uso da biblioteca de visualização de estoque. Inclui uma versão do SQLite adequada para sistemas Windows 32 bits, já que a  versão original é direcionada para sistemas Windows 64 bits. Também disponibiliza um arquivo específico para a inserção de dados na tabela do banco de dados, permitindo um exemplo prático e aprimorado do funcionamento da biblioteca.
+A pasta "arquivos-adicionais" contém recursos adicionais para facilitar o uso da biblioteca de visualização de estoque. Inclui uma versão do SQLite adequada para sistemas Windows 32 bits, já que a  versão original é direcionada para sistemas Windows 64 bits. Também disponibiliza um arquivo específico para a inserção de dados na tabela do banco de dados, permitindo um exemplo prático e aprimorado do funcionamento da biblioteca.Além de um PDF com um resumo mais detalhado do projeto.
 
 ----------------------------------------------------------------------------------------------------------
 © Mateus Morais 2023
